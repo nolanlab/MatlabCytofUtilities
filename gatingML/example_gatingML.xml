@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gating:Gating-ML xmlns:gating="http://www.isac-net.org/std/Gating-ML/v2.0/gating" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:transforms="http://www.isac-net.org/std/Gating-ML/v2.0/transformations" xmlns:data-type="http://www.isac-net.org/std/Gating-ML/v2.0/datatypes" xsi:schemaLocation="http://www.isac-net.org/std/Gating-ML/v2.0/gating http://flowcyt.sourceforge.net/gating/2.0/xsd/Gating-ML.v2.0.xsd http://www.isac-net.org/std/Gating-ML/v2.0/transformations http://flowcyt.sourceforge.net/gating/2.0/xsd/Transformations.v2.0.xsd http://www.isac-net.org/std/Gating-ML/v2.0/datatypes http://flowcyt.sourceforge.net/gating/2.0/xsd/DataTypes.v2.0.xsd">
+    <transforms:transformation transforms:id="Tr_Arcsinh">
+        <transforms:fasinh transforms:T="5.8760059682190064" transforms:M="0.43429448190325176" transforms:A="0.0" />
+    </transforms:transformation>
+    <gating:PolygonGate gating:id="DNA1">
+        <gating:dimension gating:compensation-ref="FCS">
+            <data-type:fcs-dimension data-type:name="Cell_length" />
+        </gating:dimension>
+        <gating:dimension gating:compensation-ref="FCS" gating:transformation-ref="Tr_Arcsinh">
+            <data-type:fcs-dimension data-type:name="(Ir191)Di" />
+        </gating:dimension>
+        <gating:vertex>
+            <gating:coordinate data-type:value="5.98046875" />
+            <gating:coordinate data-type:value="6.183832370598576" />
+        </gating:vertex>
+        <gating:vertex>
+            <gating:coordinate data-type:value="28.890625" />
+            <gating:coordinate data-type:value="6.183832370598576" />
+        </gating:vertex>
+        <gating:vertex>
+            <gating:coordinate data-type:value="44.828125" />
+            <gating:coordinate data-type:value="5.453372524905075" />
+        </gating:vertex>
+        <gating:vertex>
+            <gating:coordinate data-type:value="57.77734375" />
+            <gating:coordinate data-type:value="4.520007166518935" />
+        </gating:vertex>
+        <gating:vertex>
+            <gating:coordinate data-type:value="48.8125" />
+            <gating:coordinate data-type:value="2.977925270054878" />
+        </gating:vertex>
+        <gating:vertex>
+            <gating:coordinate data-type:value="3.98828125" />
+            <gating:coordinate data-type:value="2.977925270054878" />
+        </gating:vertex>
+    </gating:PolygonGate>
+    <gating:RectangleGate gating:id="CD45">
+        <gating:dimension gating:compensation-ref="FCS" gating:min="1.0" gating:max="74.7109375">
+            <data-type:fcs-dimension data-type:name="Cell_length" />
+        </gating:dimension>
+        <gating:dimension gating:compensation-ref="FCS" gating:min="3.099668577670461" gating:max="8.253468600063496" gating:transformation-ref="Tr_Arcsinh">
+            <data-type:fcs-dimension data-type:name="CD45(Gd154)Di" />
+        </gating:dimension>
+    </gating:RectangleGate>
+    <gating:RectangleGate gating:id="CD33pos">
+        <gating:dimension gating:compensation-ref="FCS" gating:min="-1.2425093939520166" gating:max="2.206884321822849" gating:transformation-ref="Tr_Arcsinh">
+            <data-type:fcs-dimension data-type:name="CD3(Yb170)Di" />
+        </gating:dimension>
+        <gating:dimension gating:compensation-ref="FCS" gating:min="0.8677079380514304" gating:max="4.885237089365686" gating:transformation-ref="Tr_Arcsinh">
+            <data-type:fcs-dimension data-type:name="CD33(Gd158)Di" />
+        </gating:dimension>
+    </gating:RectangleGate>
+    <gating:RectangleGate gating:id="CD33neg">
+        <gating:dimension gating:compensation-ref="FCS" gating:min="-0.4308873431814597" gating:max="6.995454421369133" gating:transformation-ref="Tr_Arcsinh">
+            <data-type:fcs-dimension data-type:name="CD3(Yb170)Di" />
+        </gating:dimension>
+        <gating:dimension gating:compensation-ref="FCS" gating:min="-0.9584416761823215" gating:max="0.6648024253587915" gating:transformation-ref="Tr_Arcsinh">
+            <data-type:fcs-dimension data-type:name="CD33(Gd158)Di" />
+        </gating:dimension>
+    </gating:RectangleGate>
+    <gating:RectangleGate gating:id="CD3negCD20neg">
+        <gating:dimension gating:compensation-ref="FCS" gating:min="-0.593211753335571" gating:max="1.517005578667876" gating:transformation-ref="Tr_Arcsinh">
+            <data-type:fcs-dimension data-type:name="CD3(Yb170)Di" />
+        </gating:dimension>
+        <gating:dimension gating:compensation-ref="FCS" gating:min="-0.5120495482585157" gating:max="0.8271268355129027" gating:transformation-ref="Tr_Arcsinh">
+            <data-type:fcs-dimension data-type:name="CD20(Pm147)Di" />
+        </gating:dimension>
+    </gating:RectangleGate>
+    <gating:RectangleGate gating:id="CD3pos">
+        <gating:dimension gating:compensation-ref="FCS" gating:min="1.8822355015146264" gating:max="8.13172529244791" gating:transformation-ref="Tr_Arcsinh">
+            <data-type:fcs-dimension data-type:name="CD3(Yb170)Di" />
+        </gating:dimension>
+        <gating:dimension gating:compensation-ref="FCS" gating:min="-1.0396038812593775" gating:max="1.6387488862834592" gating:transformation-ref="Tr_Arcsinh">
+            <data-type:fcs-dimension data-type:name="CD20(Pm147)Di" />
+        </gating:dimension>
+    </gating:RectangleGate>
+    <gating:RectangleGate gating:id="CD20pos">
+        <gating:dimension gating:compensation-ref="FCS" gating:min="-0.6337928558740993" gating:max="1.517005578667876" gating:transformation-ref="Tr_Arcsinh">
+            <data-type:fcs-dimension data-type:name="CD3(Yb170)Di" />
+        </gating:dimension>
+        <gating:dimension gating:compensation-ref="FCS" gating:min="1.030032348205542" gating:max="6.224413473137104" gating:transformation-ref="Tr_Arcsinh">
+            <data-type:fcs-dimension data-type:name="CD20(Pm147)Di" />
+        </gating:dimension>
+    </gating:RectangleGate>
+    <gating:RectangleGate gating:id="CD19pos">
+        <gating:dimension gating:compensation-ref="FCS" gating:min="0.583640220281736" gating:max="5.047561499519797" gating:transformation-ref="Tr_Arcsinh">
+            <data-type:fcs-dimension data-type:name="CD19(Nd142)Di" />
+        </gating:dimension>
+        <gating:dimension gating:compensation-ref="FCS" gating:min="0.29957250251204076" gating:max="6.224413473137104" gating:transformation-ref="Tr_Arcsinh">
+            <data-type:fcs-dimension data-type:name="CD20(Pm147)Di" />
+        </gating:dimension>
+    </gating:RectangleGate>
+    <gating:RectangleGate gating:id="CD8pos">
+        <gating:dimension gating:compensation-ref="FCS" gating:min="2.125722116745793" gating:max="8.415793010217605" gating:transformation-ref="Tr_Arcsinh">
+            <data-type:fcs-dimension data-type:name="CD8(Nd146)Di" />
+        </gating:dimension>
+        <gating:dimension gating:compensation-ref="FCS" gating:min="-1.4454149066446556" gating:max="1.6793299888219873" gating:transformation-ref="Tr_Arcsinh">
+            <data-type:fcs-dimension data-type:name="CD4(Nd145)Di" />
+        </gating:dimension>
+    </gating:RectangleGate>
+    <gating:RectangleGate gating:id="CD4pos">
+        <gating:dimension gating:compensation-ref="FCS" gating:min="-0.7961172660282103" gating:max="2.409789834515488" gating:transformation-ref="Tr_Arcsinh">
+            <data-type:fcs-dimension data-type:name="CD8(Nd146)Di" />
+        </gating:dimension>
+        <gating:dimension gating:compensation-ref="FCS" gating:min="1.8822355015146264" gating:max="5.8591835502903535" gating:transformation-ref="Tr_Arcsinh">
+            <data-type:fcs-dimension data-type:name="CD4(Nd145)Di" />
+        </gating:dimension>
+    </gating:RectangleGate>
+    <gating:RectangleGate gating:id="CD16pos">
+        <gating:dimension gating:compensation-ref="FCS" gating:min="0.8271268355129026" gating:max="6.021507960444464" gating:transformation-ref="Tr_Arcsinh">
+            <data-type:fcs-dimension data-type:name="CD16(Ho165)Di" />
+        </gating:dimension>
+        <gating:dimension gating:compensation-ref="FCS" gating:min="5.2098859096739085" gating:max="7.9694008822938" gating:transformation-ref="Tr_Arcsinh">
+            <data-type:fcs-dimension data-type:name="CD45(Gd154)Di" />
+        </gating:dimension>
+    </gating:RectangleGate>
+    <gating:RectangleGate gating:id="CD11cposCD14pos">
+        <gating:dimension gating:compensation-ref="FCS" gating:min="0.6648024253587916" gating:max="4.357682756364824" gating:transformation-ref="Tr_Arcsinh">
+            <data-type:fcs-dimension data-type:name="CD14(Dy160)Di" />
+        </gating:dimension>
+        <gating:dimension gating:compensation-ref="FCS" gating:min="0.7865457329743747" gating:max="4.80407488428863" gating:transformation-ref="Tr_Arcsinh">
+            <data-type:fcs-dimension data-type:name="CD11c(Tb159)Di" />
+        </gating:dimension>
+    </gating:RectangleGate>
+    <gating:BooleanGate gating:id="singlet">
+        <gating:and>
+            <gating:gateReference gating:ref="DNA1" />
+            <gating:gateReference gating:ref="CD45" />
+        </gating:and>
+    </gating:BooleanGate>
+    <gating:BooleanGate gating:id="Monocytes">
+        <gating:and>
+            <gating:gateReference gating:ref="singlet" />
+            <gating:gateReference gating:ref="CD33pos" />
+        </gating:and>
+    </gating:BooleanGate>
+    <gating:BooleanGate gating:id="Bcells">
+        <gating:and>
+            <gating:gateReference gating:ref="singlet" />
+            <gating:gateReference gating:ref="CD33neg" />
+            <gating:gateReference gating:ref="CD20pos" />
+        </gating:and>
+    </gating:BooleanGate>
+    <gating:BooleanGate gating:id="Tcells">
+        <gating:and>
+            <gating:gateReference gating:ref="singlet" />
+            <gating:gateReference gating:ref="CD33neg" />
+            <gating:gateReference gating:ref="CD3pos" />
+        </gating:and>
+    </gating:BooleanGate>
+    <gating:BooleanGate gating:id="CD19posBcells">
+        <gating:and>
+            <gating:gateReference gating:ref="Bcells" />
+            <gating:gateReference gating:ref="CD19pos" />
+        </gating:and>
+    </gating:BooleanGate>
+    <gating:BooleanGate gating:id="CD4posTcells">
+        <gating:and>
+            <gating:gateReference gating:ref="Tcells" />
+            <gating:gateReference gating:ref="CD4pos" />
+        </gating:and>
+    </gating:BooleanGate>
+    <gating:BooleanGate gating:id="CD8posTcells">
+        <gating:and>
+            <gating:gateReference gating:ref="Tcells" />
+            <gating:gateReference gating:ref="CD8pos" />
+        </gating:and>
+    </gating:BooleanGate>
+    <gating:BooleanGate gating:id="NKcells">
+        <gating:and>
+            <gating:gateReference gating:ref="singlet" />
+            <gating:gateReference gating:ref="CD33neg" />
+            <gating:gateReference gating:ref="CD3negCD20neg" />
+            <gating:gateReference gating:ref="CD16pos" />
+        </gating:and>
+    </gating:BooleanGate>
+    <gating:BooleanGate gating:id="CD11cposCD14posMonocytes">
+        <gating:and>
+            <gating:gateReference gating:ref="Monocytes" />
+            <gating:gateReference gating:ref="CD11cposCD14pos" />
+        </gating:and>
+    </gating:BooleanGate>
+</gating:Gating-ML>
+
