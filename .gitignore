@@ -1,2 +1,4 @@
 *.zip
 *.mexmaci64
+*.DS_Store
+*.m~
