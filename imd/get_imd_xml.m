@@ -15,17 +15,21 @@ str=char(fread(fid,1024,'char')');
 
 pos=-2048;
 
-startpos=strfind(str(1:1024),startstr);
-
-while isempty(startpos)
+startpos=strfind(str,startstr);
+counter=0;
+while isempty(startpos) && counter<1000
     fseek(fid,pos,'cof');
     
     str=[ char(fread(fid,1024,'char')') str];
     
-    startpos=strfind(str(1:1024),startstr);
-
+    startpos=strfind(str(1:2048),startstr);
+    counter=counter+1;
 end
 fclose(fid);
+
+if isempty(startpos)
+    error('XML not found in tail of IMD file')
+end
 
 str=str(startpos:end);
 
