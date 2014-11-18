@@ -13,7 +13,7 @@ function [axTicks,axTickLabels]=transformAxisLabels(axisHandle,cofactor,varargin
 %  asintransformAxisLabels(gca,cofactorY,'y')
 %  asintransformAxisLabels(gca,cofactorZ,'z')
 
-transformAxisLabels(gca,10,'x','y','z') %transforms all 3 axes
+% transformAxisLabels(gca,10,'x','y','z') %transforms all 3 axes
 
 
 for i=1:length(varargin)
@@ -22,7 +22,11 @@ for i=1:length(varargin)
     end
     ax=varargin{i};
     axLim=cofactor*sinh(get(axisHandle,[ax 'lim']));
+    if axLim(1)==0
+        axMin=0;
+    else
     axMin=floor(log10(axLim(1)));
+    end
     axMax=ceil(log10(axLim(2)));
     
     
