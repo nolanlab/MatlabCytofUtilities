@@ -20,6 +20,7 @@ if isempty(dataEndPos)
     error('Data end position not found in FCS header.')
 end
 
+dataEndPos=str2double(dataEndPos{1});
 fseek(fid,dataEndPos,'bof');
 
 endTag='</FCSHeaderSchema>';
