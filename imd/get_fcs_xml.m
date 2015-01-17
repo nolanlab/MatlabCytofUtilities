@@ -6,8 +6,8 @@ function str=get_fcs_xml(filename)
 fid = fopen(filename,'r','b');
 fcsheader_1stline   = fread(fid,64,'char');
 
-FcsHeaderStartPos   = str2double(char(fcsheader_1stline(16:18)'));
-FcsHeaderStopPos    = str2double(char(fcsheader_1stline(23:26)'));
+FcsHeaderStartPos   = str2double(char(fcsheader_1stline(11:18)'));
+FcsHeaderStopPos    = str2double(char(fcsheader_1stline(19:26)'));
 
 fseek(fid,FcsHeaderStartPos,'bof');
 fcsheader= char(fread(fid,FcsHeaderStopPos-FcsHeaderStartPos+1,'char')');%read the main header
